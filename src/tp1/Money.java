@@ -21,4 +21,15 @@ public class Money {
 	public Money add(Money m) {
 		return new Money(this.getMontant()+m.getMontant(), this.getDevise());
 	}
+	
+	public boolean equals(Object ob) {
+		if(ob != null)
+			if(((Money)ob).montant == this.montant && ((Money)ob).devise == this.devise)
+				return true;
+		return false;
+	}
+	
+	public String toString() {
+		return "Montant: " + montant + "\nDevise: " + devise;
+	}
 }
