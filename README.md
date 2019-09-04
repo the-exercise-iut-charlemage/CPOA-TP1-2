@@ -4,6 +4,6 @@
 
 Ce git est en rapport avec les exercices de cours que j'ai mes camarades et moi.
 
-## Terms of service
+## Terms of use
 
 Le code source est en GPL 3.0, donc vous dever la respecter.
