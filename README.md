@@ -2,8 +2,8 @@
 
 ## C'est quoi ?
 
-ce git et en rapport avec les exercice de cours que j'ai en cours me camarade et moi.
+Ce git est en rapport avec les exercices de cours que j'ai mes camarades et moi.
 
 ## Terms of service
 
-le code source est en GPL 3.0, donc vous devai la respeté.
+Le code source est en GPL 3.0, donc vous dever la respecter.
