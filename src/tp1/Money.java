@@ -22,8 +22,14 @@ public class Money {
 		return new Money(this.getMontant()+m.getMontant(), this.getDevise());
 	}
 	
+	/**
+	 * @param ob Money a comparer
+	 * @return si le montant et la devise est egale
+	 * 
+	 * compare deux objets Money
+	 */
 	public boolean equals(Object ob) {
-		if(ob != null)
+		if(ob != null && ob.getClass() == getClass())
 			if(((Money)ob).montant == this.montant && ((Money)ob).devise == this.devise)
 				return true;
 		return false;
