@@ -15,4 +15,11 @@ public class TestMoney {
         assertEquals("La valeur redonné et pas la bonne", 10, money.getMontant());
     }
 
+    @Test
+    public void testMontantAdd() {
+        Money money = new Money(10, "EUR");
+        money = money.add(money);
+        assertEquals("La valeur redonné et pas la bonne", 20, money.getMontant());
+    }
+
 }
