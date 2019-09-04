@@ -22,4 +22,18 @@ public class TestMoney {
         assertEquals("La valeur redonné et pas la bonne", 20, money.getMontant());
     }
 
+    @Test
+    public void testDevise() {
+        Money money = new Money(10, "EUR");
+        assertEquals("La valeur redonné et pas la bonne", "EUR", money.getDevise());
+    }
+
+    @Test
+    public void testEqualite() {
+        Money money = new Money(10, "EUR");
+        assertFalse("Un string n'est a un Money", money.equals("Hello"));
+        assertTrue("Money doit etre equele a lui même", money.equals(money));
+        assertFalse("money doit pas etre equela a un null", money.equals(null));
+    }
+
 }
