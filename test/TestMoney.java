@@ -36,4 +36,10 @@ public class TestMoney {
         assertFalse("money doit pas etre equela a un null", money.equals(null));
     }
 
+    @Test
+    public void testToString() {
+        Money money = new Money(10, "EUR");
+        assertEquals("Un string n'est a un Money", "Montant: 10\nDevise: EUR", money.toString());
+    }
+
 }
