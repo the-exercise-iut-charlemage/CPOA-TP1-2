@@ -38,7 +38,8 @@ public class Money {
 	 * @param m le montant a ajouter
 	 * @return un nouveau objet Money
 	 */
-	public Money add(Money m) {
+	public Money add(Money m) throws DeviseException {
+		if (!m.getDevise().equals(this.devise)) throw new DeviseException("Les deviss ne sont pas les même!");
 		return new Money(this.getMontant()+m.getMontant(), this.getDevise());
 	}
 	
@@ -48,9 +49,10 @@ public class Money {
 	 * @param ob Money a comparer
 	 * @return si le montant et la devise est egale
 	 */
+	@Override
 	public boolean equals(Object ob) {
 		if(ob != null && ob.getClass() == getClass())
-			if(((Money)ob).montant == this.montant && ((Money)ob).devise == this.devise)
+			if(((Money)ob).montant == this.montant && ((Money) ob).devise.equals(this.devise))
 				return true;
 		return false;
 	}
@@ -58,6 +60,7 @@ public class Money {
 	/**
 	 * @return la description de la class
 	 */
+	@Override
 	public String toString() {
 		return "Montant: " + montant + "\nDevise: " + devise;
 	}
