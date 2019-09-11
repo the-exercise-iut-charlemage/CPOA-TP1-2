@@ -2,7 +2,6 @@ package tp2.exo2;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
@@ -17,14 +16,9 @@ public class ListeIp {
         try {
             FileInputStream inputStream = new FileInputStream(new File(nom));
             Scanner scanner = new Scanner(inputStream);
-            StringBuilder builder = new StringBuilder();
-            while (scanner.hasNext()) {
-                builder.append(scanner.nextLine());
-            }
-            StringTokenizer rawToLine = new StringTokenizer(builder.toString(), "\n");
             List<String> tmpIP = new ArrayList<>();
-            while (rawToLine.hasMoreTokens()) {
-                StringTokenizer lineToIp = new StringTokenizer(rawToLine.nextToken(), " ");
+            while (scanner.hasNext()) {
+                StringTokenizer lineToIp = new StringTokenizer(scanner.nextLine(), " ");
                 tmpIP.add(lineToIp.nextToken());
             }
             scanner.close();
