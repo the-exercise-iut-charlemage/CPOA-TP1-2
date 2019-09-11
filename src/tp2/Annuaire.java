@@ -18,7 +18,8 @@ public class Annuaire{
 	}
 	
 	public void domaine() {
-		System.out.println(map.toString());
+		//System.out.println(map.toString());
+		this.map.keySet().forEach(System.out::println);
 	}
 	
 	public String acces(String nom) {
