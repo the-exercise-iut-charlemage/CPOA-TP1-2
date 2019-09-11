@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 import tp1.Money;
 import tp1.DeviseException;
 
+import java.util.ArrayList;
+
 public class TestMoney {
 
     @Before
