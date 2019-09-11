@@ -13,13 +13,13 @@ public class TestListeIP {
     @Test
     public void test_load_file() {
         ListeIp listeIp = new ListeIp();
-        listeIp.chargeFicher("D:\\logs.txt");
+        listeIp.chargeFicher("logs.txt");
     }
 
     @Test
     public void test_to_string() {
         ListeIp listeIp = new ListeIp();
-        listeIp.chargeFicher("D:\\logs.txt");
+        listeIp.chargeFicher("logs.txt");
         System.out.println(listeIp.toString());
     }
 }
