@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import tp1.Money;
+import tp1.DeviseException;
 
 public class TestMoney {
 
@@ -18,8 +19,21 @@ public class TestMoney {
     @Test
     public void testMontantAdd() {
         Money money = new Money(10, "EUR");
-        money = money.add(money);
+        try {
+			money.add(money);
+		} catch (DeviseException e) {
+	        assertTrue("L'exception n'est pas gerer", true);
+		}
         assertEquals("La valeur redonné n'est pas la bonne", 20, money.getMontant());
+    }
+
+    @Test(expected = DeviseException.class)
+    public void testMontantAddException() {
+        Money money = new Money(10, "EUR");
+		try {
+			money.add(money);
+		} catch (DeviseException e) {
+		}
     }
 
     @Test
@@ -31,9 +45,19 @@ public class TestMoney {
     @Test
     public void testEgalite() {
         Money money = new Money(10, "EUR");
+        Money money2 = new Money(5, "EUR");
+        Money money3 = new Money(5, "DOL");
         assertFalse("Un string n'est pas un objet Money", money.equals("Hello"));
         assertTrue("Money doit etre egale a lui même", money.equals(money));
         assertFalse("money ne doit pas etre egale a un null", money.equals(null));
+        assertFalse("", money.equals(money2));
+    }
+    
+    @Test(expected = DeviseException.class)
+    public void testEgaliteException() {
+    Money money = new Money(10, "EUR");
+    Money money2 = new Money(10, "DOL");
+    money.equals(money2);
     }
 
     @Test

@@ -39,7 +39,8 @@ public class Money {
 	 * @return un nouveau objet Money
 	 */
 	public Money add(Money m) throws DeviseException {
-		if (!m.getDevise().equals(this.devise)) throw new DeviseException("Les deviss ne sont pas les même!");
+		if (!m.getDevise().equals(this.devise))
+			throw new DeviseException("Les deviss ne sont pas les même!");
 		return new Money(this.getMontant()+m.getMontant(), this.getDevise());
 	}
 	
