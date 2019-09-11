@@ -2,7 +2,7 @@ package tp2;
 
 import java.util.HashMap;
 
-public class Annuaire{
+public class Annuaire {
 	
 	private HashMap<String, String> map;
 	
