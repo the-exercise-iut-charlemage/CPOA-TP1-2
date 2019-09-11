@@ -31,9 +31,9 @@ public class MoneyList {
 	
 	@Override
 	public String toString() {
-		String s = "Monay List:";
+		String s = "Money List:";
 		for (int i = 0; i < list.size(); i++) {
-			s += "  " + list.get(i).toString();
+			s += "\n  " + list.get(i).toString();
 		}
 		return s;
 	}

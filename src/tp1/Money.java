@@ -63,6 +63,6 @@ public class Money {
 	 */
 	@Override
 	public String toString() {
-		return "Montant: " + montant + "\nDevise: " + devise;
+		return "Montant: " + montant + "    Devise: " + devise;
 	}
 }

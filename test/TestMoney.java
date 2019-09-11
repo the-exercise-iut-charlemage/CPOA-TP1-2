@@ -63,7 +63,7 @@ public class TestMoney {
     @Test
     public void testToString() {
         Money money = new Money(10, "EUR");
-        assertEquals("Le string n'est pas correct", "Montant: 10\nDevise: EUR", money.toString());
+        assertEquals("Le string n'est pas correct", "Montant: 10    Devise: EUR", money.toString());
     }
 
 }
