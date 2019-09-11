@@ -6,19 +6,11 @@ public class Annuaire{
 	
 	private HashMap<String, String> map;
 	
-	public static void main(String[] args) {
-		Annuaire a = new Annuaire();
-		a.adjonction("lul", "00");
-		a.adjonction("lol", "00");
-		a.domaine();
-	}
-	
 	public Annuaire() {
-		map = new HashMap<String, String>();
+		map = new HashMap<>();
 	}
 	
 	public void domaine() {
-		//System.out.println(map.toString());
 		this.map.keySet().forEach(System.out::println);
 	}
 	
