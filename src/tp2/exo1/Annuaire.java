@@ -1,4 +1,4 @@
-package tp2;
+package tp2.exo1;
 
 import java.util.HashMap;
 
