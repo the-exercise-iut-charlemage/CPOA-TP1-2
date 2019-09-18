@@ -18,4 +18,5 @@ public class Formation {
     public void supprimerMatiere(String matiere) {
         this.matieres.remove(matiere);
     }
+    
 }
