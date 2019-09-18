@@ -1,7 +1,7 @@
 @startuml
 
 class Etudiant {
-    -Map<String, Collection<Floats>> resultats
+    -Map<String, List<Floats>> resultats
     + ajouterNote(String, Floats)
     + calculMoyenne(String): Floats
     + calculMoyenne(): Floats
@@ -14,7 +14,8 @@ class Identite {
 }
 
 class Formation {
-    -Collection<String> matiere
+    -List<String> matiere
+    -Map<String, Int> coefficients
     +void ajouterMatiere(String)
     +void supprimerMatiere(String)
 }
@@ -23,7 +24,7 @@ class Groupe {
 }
 
 Etudiant "1" --> "1" Identite : - id
-Etudiant "*" --> "1" Formation : - formation
+Etudiant "*" --> "1..*" Formation : - formation
 Groupe "1" --> "1..*" Etudiant : - etudiants
 Groupe "*" --> "1" Formation : - formation
 

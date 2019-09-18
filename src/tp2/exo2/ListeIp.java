@@ -23,6 +23,7 @@ public class ListeIp {
             }
             scanner.close();
             inputStream.close();
+            tmpIP.sort(Comparator.comparing(AdresseIP::toString));
             this.listIP.addAll(tmpIP);
         } catch (IOException e) {
             e.printStackTrace();
