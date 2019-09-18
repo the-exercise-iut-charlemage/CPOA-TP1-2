@@ -10,6 +10,7 @@ public class Etudiant {
 	Identite id;
 	Formation formation;
 	Map<String, List<Float>> resultats;
+	private float res = 0;
 
 	public Etudiant(Identite id, Formation formation) {
 		this.id = id;
@@ -37,7 +38,6 @@ public class Etudiant {
 	}
 
 	public float calculerMoyenne() {
-		float res = 0;
 		resultats.forEach((k, v) -> {
 			if (resultats.get(k) != null && !resultats.get(k).isEmpty()) {
 				List<Float> l = resultats.get(k);
@@ -47,5 +47,6 @@ public class Etudiant {
 				res /= l.size();
 			}
 		});
+		return res;
 	}
 }
