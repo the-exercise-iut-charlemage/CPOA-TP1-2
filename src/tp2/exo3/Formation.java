@@ -43,7 +43,7 @@ public class Formation {
     public void supprimerMatiere(String matiere) {
         this.matieres.remove(matiere);
     }
-
+    
     /**
      * fonction qui permé d'optenir les coef d'une matiere
      * @param matiere la matiere conserné
