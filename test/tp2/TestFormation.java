@@ -18,13 +18,10 @@ public class TestFormation {
 
 	@Test
 	public void suppr() {
-<<<<<<< HEAD
 		Formation f = new Formation();
 		f.ajouterMatiere("math", 3.0f);
 		f.supprimerMatiere("math");
 		assertEquals("La liste n'est pas vide", 0, f.getMatieres().size());
-=======
->>>>>>> 4d4114dce3a697296e38a3b6e8baa78d24f7a34d
 	}
 
 	@Test
