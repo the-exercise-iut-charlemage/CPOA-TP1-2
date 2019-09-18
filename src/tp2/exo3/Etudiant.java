@@ -46,17 +46,27 @@ public class Etudiant {
 	}
 
 	public float calculerMoyenne() {
-		res = 0;
-		size = 0;
-		resultats.forEach((k, v) -> {
-			if (resultats.get(k) != null && !resultats.get(k).isEmpty()) {
-				List<Float> l = resultats.get(k);
-				for (int i = 0; i < l.size(); i++) {
-					res += l.get(i) * formation.coefMatiere(k);
-					size++;
-				}
-			}
-		});
-		return size!=0?res/size:-1;
+//		res = 0;
+//		size = 0;
+//		resultats.forEach((k, v) -> {
+//			if (resultats.get(k) != null && !resultats.get(k).isEmpty()) {
+//				List<Float> l = resultats.get(k);
+//				for (int i = 0; i < l.size(); i++) {
+//					res += l.get(i) * formation.coefMatiere(k);
+//					size++;
+//				}
+//			}
+//		});
+//		return size!=0?res/size:-1;
+
+		float nbMat = 0f;
+		float moy = 0f;
+
+		for (String mat: this.resultats.keySet()) {
+			moy += this.calculerMoyenne(mat);
+			nbMat++;
+		}
+
+		return moy / nbMat;
 	}
 }

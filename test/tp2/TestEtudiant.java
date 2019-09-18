@@ -32,6 +32,27 @@ public class TestEtudiant {
         etudiant.ajouterNote("math", 10.9f);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void test_ajout_bad_note() {
+        Identite identite = new Identite("XXXX-XXXX", "Nom", "Prenom");
+        Etudiant etudiant = new Etudiant(identite, this.formation_1);
+        etudiant.ajouterNote("info", 40f);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_ajout_bad_note_matiere() {
+        Identite identite = new Identite("XXXX-XXXX", "Nom", "Prenom");
+        Etudiant etudiant = new Etudiant(identite, this.formation_1);
+        etudiant.ajouterNote("bdd", 10f);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_ajout_bad_note_matiere_null() {
+        Identite identite = new Identite("XXXX-XXXX", "Nom", "Prenom");
+        Etudiant etudiant = new Etudiant(identite, this.formation_1);
+        etudiant.ajouterNote(null, 10f);
+    }
+
     @Test
     public void test_calcule_moy() {
         Identite identite = new Identite("XXXX-XXXX", "Nom", "Prenom");
@@ -40,8 +61,8 @@ public class TestEtudiant {
         etudiant.ajouterNote("info", 10f);
         etudiant.ajouterNote("math", 0f);
         etudiant.ajouterNote("math", 20f);
-        assertEquals(etudiant.calculerMoyenne("info"), 15f, 0f);
-        assertEquals(etudiant.calculerMoyenne("math"), 10f, 0f);
-        assertEquals(etudiant.calculerMoyenne(), 12.5f, 0f);
+        assertEquals(15f, etudiant.calculerMoyenne("info"), 0f);
+        assertEquals(10f, etudiant.calculerMoyenne("math"),  0f);
+        assertEquals(12.5f, etudiant.calculerMoyenne(), 0f);
     }
 }
