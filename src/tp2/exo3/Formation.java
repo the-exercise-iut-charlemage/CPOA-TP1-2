@@ -52,10 +52,14 @@ public class Formation {
      * @return le coef conresné
      * @throws IllegalArgumentException erreur retouné si la matiere d'exsite pas
      */
-    public float coefMatier(String matiere) throws IllegalArgumentException {
+    public float coefMatiere(String matiere) throws IllegalArgumentException {
         Float i = this.coefficients.get(matiere);
         if (i != null) return i;
         else throw new IllegalArgumentException("La matiere demandé (" + matiere + ") n'est pas presnete dans cette formation!");
+    }
+
+    public boolean contientMatiere(String matiere) {
+        return this.matieres.contains(matiere);
     }
 
     /**

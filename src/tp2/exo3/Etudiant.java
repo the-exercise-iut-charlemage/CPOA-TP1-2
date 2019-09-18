@@ -7,9 +7,9 @@ import java.util.Map;
 
 public class Etudiant {
 
-	Identite id;
-	Formation formation;
-	Map<String, List<Float>> resultats;
+	private Identite id;
+	private Formation formation;
+	private Map<String, List<Float>> resultats;
 	private float res = 0;
 
 	public Etudiant(Identite id, Formation formation) {
@@ -18,11 +18,22 @@ public class Etudiant {
 		resultats = new HashMap<>();
 	}
 
-	public void ajouterNote(String matiere, float note) {
-		if (note >= 0 && note <= 20 && resultats.containsKey(matiere))
-			if (resultats.get(matiere) == null)
-				resultats.replace(matiere, new ArrayList<Float>());
-		resultats.get(matiere).add(note);
+	public void ajouterNote(String matiere, float note) throws IllegalArgumentException {
+		//if (note >= 0 && note <= 20 && resultats.containsKey(matiere))
+		//	if (resultats.get(matiere) == null)
+		//		resultats.replace(matiere, new ArrayList<Float>());
+		//resultats.get(matiere).add(note);
+		if (note >= 0 && note <= 20) {
+			if (this.resultats.containsKey(matiere)) {
+				this.resultats.get(matiere).add(note);
+				return;
+			} else if (this.formation.contientMatiere(matiere)) {
+				this.resultats.put(matiere, new ArrayList<>());
+				this.resultats.get(matiere).add(note);
+				return;
+			}
+		}
+		throw new IllegalArgumentException("La note et/ou la matiere donnée ne sont pas resevable");
 	}
 
 	public float calculerMoyenne(String matiere) {
