@@ -40,7 +40,8 @@ public class TestEtudiant {
         etudiant.ajouterNote("info", 10f);
         etudiant.ajouterNote("math", 0f);
         etudiant.ajouterNote("math", 20f);
-
-
+        assertEquals(etudiant.calculerMoyenne("info"), 15f, 0f);
+        assertEquals(etudiant.calculerMoyenne("math"), 10f, 0f);
+        assertEquals(etudiant.calculerMoyenne(), 12.5f, 0f);
     }
 }

@@ -9,13 +9,6 @@ import java.util.Map;
  * Class contenent les information a propose d'un formation
  */
 public class Formation {
-    public List<String> getMatieres() {
-        return matieres;
-    }
-
-    public Map<String, Float> getCoefficients() {
-        return coefficients;
-    }
 
     /**
      * Liste des matieres dans cette formation
@@ -63,5 +56,23 @@ public class Formation {
         Float i = this.coefficients.get(matiere);
         if (i != null) return i;
         else throw new IllegalArgumentException("La matiere demandé (" + matiere + ") n'est pas presnete dans cette formation!");
+    }
+
+    /**
+     * Use only in testing
+     * @return Matieres list
+     */
+    @Deprecated
+    public List<String> getMatieres() {
+        return matieres;
+    }
+
+    /**
+     * Use only in testing
+     * @return coefficients map
+     */
+    @Deprecated
+    public Map<String, Float> getCoefficients() {
+        return coefficients;
     }
 }
