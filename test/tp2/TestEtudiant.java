@@ -65,4 +65,12 @@ public class TestEtudiant {
         assertEquals(10f, etudiant.calculerMoyenne("math"),  0f);
         assertEquals(12.5f, etudiant.calculerMoyenne(), 0f);
     }
+
+    @Test
+    public void test_calcule_moy_faild_no_note() {
+        Identite identite = new Identite("XXXX-XXXX", "Nom", "Prenom");
+        Etudiant etudiant = new Etudiant(identite, this.formation_1);
+        assertEquals(-1f, etudiant.calculerMoyenne("dkgjkdfghjk"), 0f);
+        assertEquals(-1f, etudiant.calculerMoyenne(), 0f);
+    }
 }
