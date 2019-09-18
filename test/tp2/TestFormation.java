@@ -15,7 +15,7 @@ public class TestFormation {
 		Formation f = new Formation();
 		f.ajouterMatiere("math", 3);
 		assertTrue("", f.getMatieres().contains("math"));
-		assertEquals("",3.0,  f.coefMatier("math"));
+		assertEquals("",3.0,  f.coefMatiere("math"));
 	}
 
 	@Test
