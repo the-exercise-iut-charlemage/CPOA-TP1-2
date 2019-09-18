@@ -55,4 +55,10 @@ public class Etudiant {
 
 		return nbMat!=0?moy/nbMat:-1;
 	}
+
+	public Formation getFormation() {
+		return formation;
+	}
+	
+	
 }
