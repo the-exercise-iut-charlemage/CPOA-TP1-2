@@ -10,8 +10,6 @@ public class Etudiant {
 	private Identite id;
 	private Formation formation;
 	private Map<String, List<Float>> resultats;
-	private float res = 0;
-	private int size = 0;
 
 	public Etudiant(Identite id, Formation formation) {
 		this.id = id;
@@ -34,7 +32,7 @@ public class Etudiant {
 	}
 
 	public float calculerMoyenne(String matiere) {
-		res = 0;
+		float res = 0;
 		if (resultats.get(matiere) == null || resultats.get(matiere).isEmpty()) {
 			return -1;
 		}
@@ -46,18 +44,6 @@ public class Etudiant {
 	}
 
 	public float calculerMoyenne() {
-//		res = 0;
-//		size = 0;
-//		resultats.forEach((k, v) -> {
-//			if (resultats.get(k) != null && !resultats.get(k).isEmpty()) {
-//				List<Float> l = resultats.get(k);
-//				for (int i = 0; i < l.size(); i++) {
-//					res += l.get(i) * formation.coefMatiere(k);
-//					size++;
-//				}
-//			}
-//		});
-//		return size!=0?res/size:-1;
 
 		float nbMat = 0f;
 		float moy = 0f;
@@ -67,6 +53,6 @@ public class Etudiant {
 			nbMat++;
 		}
 
-		return moy / nbMat;
+		return nbMat!=0?moy/nbMat:-1;
 	}
 }
