@@ -18,6 +18,7 @@ class Formation {
     -Map<String, Int> coefficients
     +void ajouterMatiere(String)
     +void supprimerMatiere(String)
+    +void coefMatiere(String)
 }
 
 class Groupe {
