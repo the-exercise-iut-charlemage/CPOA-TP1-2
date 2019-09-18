@@ -18,7 +18,7 @@ public class Formation {
     /**
      * Liste des coefficients dans chaque matiere
      */
-    private Map<String, Integer> coefficients;
+    private Map<String, Float> coefficients;
 
     /**
      * contruteur par defaut
@@ -32,8 +32,9 @@ public class Formation {
      * Fonction utilise pour ajoute un matiere
      * @param matiere la matiere a ajout dans la formation
      */
-    public void ajouterMatiere(String matiere) {
+    public void ajouterMatiere(String matiere, float coef) {
         this.matieres.add(matiere);
+        this.coefficients.put(matiere, coef);
     }
 
     /**
@@ -42,16 +43,17 @@ public class Formation {
      */
     public void supprimerMatiere(String matiere) {
         this.matieres.remove(matiere);
+        this.coefficients.remove(matiere);
     }
-    
+
     /**
      * fonction qui permé d'optenir les coef d'une matiere
      * @param matiere la matiere conserné
      * @return le coef conresné
      * @throws IllegalArgumentException erreur retouné si la matiere d'exsite pas
      */
-    public int coefMatier(String matiere) throws IllegalArgumentException {
-        Integer i = this.coefficients.get(matiere);
+    public float coefMatier(String matiere) throws IllegalArgumentException {
+        Float i = this.coefficients.get(matiere);
         if (i != null) return i;
         else throw new IllegalArgumentException("La matiere demandé (" + matiere + ") n'est pas presnete dans cette formation!");
     }
