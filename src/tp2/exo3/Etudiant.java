@@ -11,6 +11,7 @@ public class Etudiant {
 	Formation formation;
 	Map<String, List<Float>> resultats;
 	private float res = 0;
+	private float size = 0;
 
 	public Etudiant(Identite id, Formation formation) {
 		this.id = id;
@@ -19,10 +20,6 @@ public class Etudiant {
 	}
 
 	public void ajouterNote(String matiere, float note) {
-		if (note >= 0 && note <= 20 && resultats.containsKey(matiere))
-			if (resultats.get(matiere) == null)
-				resultats.replace(matiere, new ArrayList<Float>());
-		resultats.get(matiere).add(note);
 	}
 
 	public float calculerMoyenne(String matiere) {
@@ -39,13 +36,14 @@ public class Etudiant {
 
 	public float calculerMoyenne() {
 		res = 0;
+		size = 0;
 		resultats.forEach((k, v) -> {
 			if (resultats.get(k) != null && !resultats.get(k).isEmpty()) {
 				List<Float> l = resultats.get(k);
 				for (int i = 0; i < l.size(); i++) {
-					res += l.get(i);
+					res += l.get(i) * formation.coefMatier(k);
+					size ++;
 				}
-				res /= l.size();
 			}
 		});
 		return res;
