@@ -9,6 +9,13 @@ import java.util.Map;
  * Class contenent les information a propose d'un formation
  */
 public class Formation {
+    public List<String> getMatieres() {
+        return matieres;
+    }
+
+    public Map<String, Float> getCoefficients() {
+        return coefficients;
+    }
 
     /**
      * Liste des matieres dans cette formation
