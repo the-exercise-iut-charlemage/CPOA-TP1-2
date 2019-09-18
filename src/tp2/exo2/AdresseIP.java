@@ -4,13 +4,13 @@ import java.util.StringTokenizer;
 
 public class AdresseIP {
 
-	short[] ip;
+	private int[] ip;
 	
 	public AdresseIP(StringTokenizer ip) {
-		this.ip = new short[4];
+		this.ip = new int[4];
 		for(int i : this.ip)
 			if(ip.hasMoreTokens())
-				this.ip[i] = Short.parseShort(ip.nextToken());
+				this.ip[i] = Integer.parseInt(ip.nextToken());
 	}
 	
 	@Override
