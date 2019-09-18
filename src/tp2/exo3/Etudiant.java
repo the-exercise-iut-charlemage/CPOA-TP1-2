@@ -11,7 +11,7 @@ public class Etudiant {
 	private Formation formation;
 	private Map<String, List<Float>> resultats;
 	private float res = 0;
-	private float size = 0;
+	private int size = 0;
 
 	public Etudiant(Identite id, Formation formation) {
 		this.id = id;
@@ -57,6 +57,6 @@ public class Etudiant {
 				}
 			}
 		});
-		return res;
+		return size!=0?res/size:-1;
 	}
 }
