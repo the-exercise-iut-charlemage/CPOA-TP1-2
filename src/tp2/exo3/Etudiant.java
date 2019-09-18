@@ -26,7 +26,7 @@ public class Etudiant {
 	}
 
 	public float calculerMoyenne(String matiere) {
-		float res = 0;
+		res = 0;
 		if (resultats.get(matiere) == null || resultats.get(matiere).isEmpty()) {
 			return -1;
 		}
@@ -38,6 +38,7 @@ public class Etudiant {
 	}
 
 	public float calculerMoyenne() {
+		res = 0;
 		resultats.forEach((k, v) -> {
 			if (resultats.get(k) != null && !resultats.get(k).isEmpty()) {
 				List<Float> l = resultats.get(k);
