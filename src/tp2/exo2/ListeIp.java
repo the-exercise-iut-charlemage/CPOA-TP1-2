@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class ListeIp {
-    private Set<String> listIP;
+    private Set<AdresseIP> listIP;
 
     public ListeIp() {
         this.listIP = new HashSet<>();
@@ -16,10 +16,10 @@ public class ListeIp {
         try {
             FileInputStream inputStream = new FileInputStream(new File(nom));
             Scanner scanner = new Scanner(inputStream);
-            List<String> tmpIP = new ArrayList<>();
+            List<AdresseIP> tmpIP = new ArrayList<>();
             while (scanner.hasNext()) {
-                StringTokenizer lineToIp = new StringTokenizer(scanner.nextLine(), " ");
-                tmpIP.add(lineToIp.nextToken());
+                String[] lineToIp = scanner.nextLine().split(" ");
+                tmpIP.add(new AdresseIP(lineToIp[0]));
             }
             scanner.close();
             inputStream.close();
