@@ -1,0 +1,31 @@
+@startuml
+
+class Etudiant {
+    -Map<String, Collection<Floats>> resultats
+    + ajouterNote(String, Floats)
+    + calculMoyenne(String): Floats
+    + calculMoyenne(): Floats
+}
+
+class Identite {
+    -String NIP
+    -String prenom
+    -String nom
+}
+
+class Formation {
+    -Collection<String> matiere
+    +void ajouterMatiere(String)
+    +void supprimerMatiere(String)
+}
+
+class Groupe {
+}
+
+Etudiant "1" --> "1" Identite : - id
+Etudiant "*" --> "1" Formation : - formation
+Groupe "1" --> "1..*" Etudiant : - etudiants
+Groupe "*" --> "1" Formation : - formation
+
+
+@enduml
