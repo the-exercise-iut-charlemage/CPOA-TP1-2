@@ -20,7 +20,6 @@ public class TestFormation {
 
 	@Test
 	public void suppr() {
-		
 	}
 
 	@Test
