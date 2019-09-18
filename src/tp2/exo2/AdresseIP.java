@@ -1,14 +1,19 @@
 package tp2.exo2;
 
+import java.util.StringTokenizer;
+
 public class AdresseIP {
 
 	private int[] ip;
 	
 	public AdresseIP(String ip) {
 		this.ip = new int[4];
-		String[] s = ip.split(".");
-		for(int i=0 ; i < s.length; i++)
-			this.ip[i] = Integer.parseInt(s[i]);
+		StringTokenizer tokenizer = new StringTokenizer(ip, ".");
+		int i = 0;
+		while (tokenizer.hasMoreTokens()) {
+			this.ip[i] = Integer.valueOf(tokenizer.nextToken());
+			i++;
+		}
 	}
 	
 	@Override
