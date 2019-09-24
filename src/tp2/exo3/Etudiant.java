@@ -60,5 +60,7 @@ public class Etudiant {
 		return formation;
 	}
 	
-	
+	public Identite getID() {
+		return id;
+	}
 }
