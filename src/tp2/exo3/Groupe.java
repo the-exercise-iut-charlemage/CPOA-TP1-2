@@ -76,4 +76,12 @@ public class Groupe {
 			etu.set(index, tmp);
 		}
 	}
+
+    /**
+     * Use only in test
+     */
+    @Deprecated
+    public List<Etudiant> getEtu() {
+        return etu;
+    }
 }
