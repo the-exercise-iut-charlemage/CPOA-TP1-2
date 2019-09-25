@@ -1,15 +1,27 @@
 package tp2.exo3;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Etudiant {
 
 	private Identite id;
 	private Formation formation;
 	private Map<String, List<Float>> resultats;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Etudiant etudiant = (Etudiant) o;
+		return Objects.equals(id, etudiant.id) &&
+				Objects.equals(formation, etudiant.formation) &&
+				Objects.equals(resultats, etudiant.resultats);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, formation, resultats);
+	}
 
 	public Etudiant(Identite id, Formation formation) {
 		this.id = id;
