@@ -2,7 +2,7 @@ package tp2.exo3;
 
 import java.util.*;
 
-public class Etudiant {
+public class Etudiant implements Comparable<Etudiant> {
 
 	private Identite id;
 	private Formation formation;
@@ -74,5 +74,10 @@ public class Etudiant {
 	
 	public Identite getID() {
 		return id;
+	}
+
+	@Override
+	public int compareTo(Etudiant o) {
+		return this.id.getNom().compareTo(o.id.getNom());
 	}
 }

@@ -55,7 +55,8 @@ public class Groupe {
 	}
 
 	public void triAlpha(){
-		for (int i = 0; i < etu.size(); i++) {
+		this.etu.sort(Etudiant::compareTo);
+		/*for (int i = 0; i < etu.size(); i++) {
 			Identite id = etu.get(i).getID();
 			int index = i;
 			for (int j = i; j < etu.size(); j++) {
@@ -74,7 +75,7 @@ public class Groupe {
 			Etudiant tmp = etu.get(i);
 			etu.set(i, etu.get(index));
 			etu.set(index, tmp);
-		}
+		}*/
 	}
 
     /**
