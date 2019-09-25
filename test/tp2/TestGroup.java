@@ -52,4 +52,22 @@ public class TestGroup {
         assertEquals("Le group n'est pas le même" ,groupe.getEtu(), this.etudiants);
     }
 
+    @Test
+    public void test_suppr() {
+        Groupe groupe = new Groupe(this.etudiants, this.formation);
+        Etudiant e1 = new Etudiant(new Identite("1111-1111", "Nom1", "Pernom1"), this.formation);
+        groupe.supprEtu(e1);
+        this.etudiants.remove(e1);
+        assertEquals("Le group n'est pas le même" ,groupe.getEtu(), this.etudiants);
+        this.setup(); // rebuild environment
+    }
+
+    @Test
+    public void test_suppr_erreut() {
+        Groupe groupe = new Groupe(this.etudiants, this.formation);
+        Etudiant e4 = new Etudiant(new Identite("4444-4444", "Nom4", "Pernom4"), this.formation);
+        groupe.supprEtu(e4);
+        assertEquals("Le group n'est pas le même" ,groupe.getEtu(), this.etudiants);*
+    }
+
 }
